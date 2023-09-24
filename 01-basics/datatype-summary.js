@@ -33,3 +33,32 @@ const myFuction = function ()
 {
     console.log("its functiomn");
 }
+
+// ***************************
+
+// stack (premitive) <= copy, Heap (Non-Primitive) <= refrence
+
+
+// Stack example => copy | changes in copy value
+let brand = 'retro';
+let changBrand = brand;
+
+
+changBrand = 'DEMIN';
+
+console.log('Brand => '+brand);
+console.log('changBrand => '+changBrand);
+// stack orginal value will not be change
+
+//  heap => Refrence | changes in orginal value
+
+var user ={
+    Name : 'Moumin',
+    cardNo : 98976543456,
+    age : 18,
+}
+var user1 = user;
+
+user1.Name = 'Talha';
+console.log(user);
+console.log(user1);
