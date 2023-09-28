@@ -51,3 +51,28 @@ console.log(Object.values(tinderUser)); // values
 console.log(Object.entries(tinderUser)); //  seprated divide in array
 
 console.log(tinderUser.hasOwnProperty('isLoggedIn')); // answer in boolean form
+
+
+const newObj = {
+    name: "Abdul Moumin",
+    clas: "12th",
+    Marks: 70,
+}
+
+// console.log(newObj.name);
+
+// OTHER METHOD to call 
+
+const {clas} = newObj
+const {name} =newObj
+const {Marks} = newObj
+console.log(clas , name,Marks);
+
+
+// react
+
+const navbar = ({name}) =>{
+
+}
+navbar(company = "hitesh")
+
