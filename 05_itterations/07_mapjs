@@ -1,0 +1,12 @@
+// map
+const num = [1,2,3,4,5,6,7,8,9,10];
+// const res  = num.map((elem) => elem + 11)
+// console.log(res);
+
+// changing multple use map and filter
+
+// const res = num.map((elem) => elem + 11).filter((elem) => elem > 15)
+// console.log(elem);
+// => 2
+const res = num.map((elem)  => elem * 2).map((elem) =>  elem +2).filter((elem) => elem > 10);
+console.log(res);
