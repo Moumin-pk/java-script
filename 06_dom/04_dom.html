@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <ul class="language">
+        <li>HTML</li>
+    </ul>
+</body>
+<script>
+    // create a function to add list
+
+    function addLang(elem){
+        const li = document.createElement('li')
+        li.innerText = `${elem}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLang('CSS')
+    addLang('js')
+
+    // optimiz way
+    function optimlang(elem){
+       const li =  document.createElement('li')
+       li.appendChild(document.createTextNode(elem))
+       document.querySelector('.language').appendChild(li)
+    }
+    optimlang('php')
+
+
+    // edit
+    const secondlang = document.querySelector('li:nth-child(2)')
+    //
+    //secondlang.innerHTML='moumin'
+
+    // replace with element
+    const li = document.createElement('li')
+    li.textContent = 'moumin'
+    secondlang.replaceWith(li)
+
+
+    // edit
+    const select = document.querySelector('li:nth-child(1)')
+
+    const list = document.createElement('li')
+    list.textContent = 'React'
+    select.replaceWith(list)
+
+    //remove
+    const remo = document.querySelector('li:last-child')
+    remo.remove()
+</script>
+</html>
