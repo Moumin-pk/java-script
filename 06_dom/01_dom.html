@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1 id="title" class="headin">Dom Learning</h1>
+        <p>Lorem ipsum dolor sit amet <span style="display: none;">Moumin-Ahmad</span> !</p>
+    </div>
+    <ul>
+        <li class="item-list">Mathematics: $50</li>
+        <li class="item-list">History: $40</li>
+        <li class="item-list">Science: $60</li>
+        <li class="item-list">Mathematics: $50</li>
+        <li class="item-list">English: $45</li>
+        <li class="item-list">Mathematics: $50</li>
+        <li class="item-list">Computer Science: $70</li>
+    </ul>
+</body>
+<script>
+    document.getElementById('title').innerHTML = 'Learning!'
+
+    // different in 1 => .innerHTML 2 => .innerText 3 => TextContent
+    
+    // querryselector
+    const text = document.querySelector('p');
+    console.log(text.innerHTML); // dispaly html tags  
+    console.log(text.innerText); // display none content not show
+    console.log(text.textContent); // display content none show
+
+    // document.querySelector('li').style.color = 'red';
+
+    // queryselectAll => is use for all
+
+    const elem = document.querySelectorAll('li');
+  
+   elem.forEach((elem) => elem.style.backgroundColor = ' grey' )
+
+   // html collection to convert Array 
+   // so html collection not support for each or map function etc
+
+   const templist = document.getElementsByClassName('item-list')
+
+   console.log(templist);
+   const templist1 = Array.from(templist)
+   templist1.map((elem) => elem.style.backgroundColor = 'red')
+
+</script>
+</html>
