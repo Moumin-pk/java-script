@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MOUMIN AHMAD</h1>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    // => 1
+    setTimeout(() => {
+        console.log('Moumin');
+    },2000)
+
+    // =>  2 Refrence
+    const setTime = function(){
+        console.log(`Hello Moumin`);
+    } 
+    setTimeout(setTime , 3000)
+    const nameChange = () => {
+    document.querySelector('h1').innerHTML = 'Hello! MOUMIN AHMAD😅';
+    }
+    const set = setInterval(nameChange,2000)
+    
+    // click the button stop to change text
+    const Stop = document.querySelector('#stop')
+    Stop.addEventListener('click', (elem) =>  {
+         clearInterval(set)
+    })
+    
+</script>
+</html>
