@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        body{
+            background-color: #414141;
+            color: #fff;
+        }
+        li a{
+            color: #fff;
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Amazing Image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" height ="200px" id="pomegranate" src="https://images.pexels.com/photos/18705500/pexels-photo-18705500/free-photo-of-pomegranate.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><img width="200px"height ="200px"  id="cycle"height ="200px" src="https://images.pexels.com/photos/5866031/pexels-photo-5866031.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" srcset=""></li>
+            <li><img  width="200px" id="cart" src="https://images.pexels.com/photos/6138181/pexels-photo-6138181.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img width="200px" height ="200px" id="flower"  src="https://images.pexels.com/photos/7458969/pexels-photo-7458969.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" srcset=""></li>
+            <li><img  width="200px" height ="250px" id="window" src="https://images.pexels.com/photos/8537112/pexels-photo-8537112.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><a href="http://www.google.com" id="google">Google </a></li>
+        </ul>
+    </div>
+</body>
+<script>
+
+    // attachEvent()
+    //jquery - on
+    
+    // type, timestamp, defaultprevented
+    //target , toElement, currentTarget,
+    // clinentX , clientY, ScreenX, ScreeY
+    // altkey , CtrlKry, KeyCode
+
+document.querySelector('#images').addEventListener('click', (elem) => {
+    //  alert(`Hello! click in div elem `);
+    //  console.log(elem );
+}, false) // false =>  bubble true | bottom to top => capturing mode | top to bottom
+
+
+// document.querySelector('#flower').addEventListener('click', (elem) => {
+//     elem.stopPropagation()
+// }, false)
+
+document.getElementById('google').addEventListener('click', (elem) => {
+elem.preventDefault(); // stop to open link
+})
+
+document.querySelector('#images').addEventListener('click' , (elem) => {
+
+    const pomegranate = document.querySelector('#pomegranate')
+    const cycle = document.querySelector('#cycle')
+    const cart = document.querySelector('#cart')
+     const Flowercick = document.querySelector('#flower')
+    const window = document.querySelector('#window')
+    const body = document.querySelector('body')
+    console.log(elem.target.tagName);
+    if(elem.target.tagName === 'IMG'){
+        let remove = elem.target.parentNode;
+        remove.remove();
+    }
+   
+   
+})
+
+</script>
+</html>
