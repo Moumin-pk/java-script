@@ -60,3 +60,7 @@ h1{
     background-color: #fff;
     color: #212121;
 }
+.owner{
+    float: right;
+     margin: 20px;
+ }
